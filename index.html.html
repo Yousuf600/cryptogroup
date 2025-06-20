@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crypto Academy Signals</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: 'Montserrat', sans-serif; background: #f0fdf4; color: #1a202c; }
+
+    @keyframes logoBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo-img {
+      height: 100px;
+      width: auto;
+      animation: logoBounce 2.5s infinite;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #1a202c;
+      font-weight: 600;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #20c997;
+      transition: width 0.3s ease;
+    }
+    nav a:hover {
+      color: #20c997;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #1d3557, #20c997);
+      color: #fff;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      animation: fadeInUp 0.8s ease-out both;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease-out both 0.2s;
+    }
+    .buttons a {
+      margin: 0 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #20c997;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 5px;
+      transition: transform 0.2s, background 0.3s;
+      display: inline-block;
+    }
+    .buttons a:hover {
+      transform: scale(1.05);
+      background: #17a589;
+    }
+
+    section { padding: 4rem 2rem; }
+    h2 { text-align: center; margin-bottom: 2rem; }
+
+    .signal-plans {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .plan {
+      background: #d1fae5;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      width: 250px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .plan:hover { transform: translateY(-5px); }
+    .plan h4 { margin-bottom: 0.5rem; }
+    .plan p, .plan .price { margin-bottom: 1rem; }
+    .plan .price { font-size: 1.5rem; font-weight: 700; }
+    .plan a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #1d3557;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+    .plan a:hover { background: #162a49; }
+
+    .courses, .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 2rem;
+    }
+    .course, .testimonial {
+      background: #d1fae5;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      max-width: 300px;
+      text-align: center;
+    }
+    .course h3, .testimonial h4 { margin-bottom: 0.5rem; }
+    .testimonial p { font-style: italic; margin-bottom: 1rem; }
+
+    .contact {
+      background: #e6fffa;
+      text-align: center;
+    }
+    .contact h2 { margin-bottom: 1rem; }
+    .contact p { margin: 0.5rem 0; }
+
+    footer {
+      background: #1d3557;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem 2rem;
+    }
+
+    @media (max-width: 768px) {
+      header { flex-direction: column; align-items: flex-start; }
+      nav { margin-top: 1rem; display: flex; flex-wrap: wrap; }
+      nav a { margin: 0.5rem 0.75rem; }
+      .hero { padding: 3rem 1rem; }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .signal-plans, .courses, .testimonials { flex-direction: column; align-items: center; }
+      .plan, .course, .testimonial { width: 100%; max-width: 320px; }
+      section { padding: 3rem 1rem; }
+      .logo-img { height: 100px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo/logo.png" alt="Crypto Academy Signals Logo" class="logo-img" />
+    <nav>
+      <a href="#">Home</a>
+      <a href="#signals">Signals</a>
+      <a href="#courses">Courses</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>LEARN. TRADE. EARN.</h1>
+    <p>Join the #Best Crypto Academy for Smart Money Education & Premium Signals</p>
+    <div class="buttons">
+      <a href="#signals">View Signals</a>
+      <a href="#courses">View Courses</a>
+    </div>
+  </section>
+
+  <section id="signals">
+    <h2>Our Signals Plans</h2>
+    <div class="signal-plans">
+      <div class="plan">
+        <h4>Free Signals</h4>
+        <p>Basic daily alerts via Telegram.</p>
+        <div class="price">Free</div>
+        <a href="https://t.me/+K0j5qWZQCkNiNDhk" target="_blank">Join Free</a>
+      </div>
+      <div class="plan">
+        <h4>Premium Monthly</h4>
+        <p>Advanced SMC signals & support.</p>
+        <div class="price">$12/mo</div>
+        <a href="#">Subscribe</a>
+      </div>
+      <div class="plan">
+        <h4>Lifetime Access</h4>
+        <p>All signals & courses forever.</p>
+        <div class="price">$150</div>
+        <a href="#">Get Lifetime</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="courses">
+    <h2>Featured Courses</h2>
+    <div class="courses">
+      <div class="course">
+        <h3>Crypto Basics</h3>
+        <p>Free introductory course for beginners.</p>
+      </div>
+      <div class="course">
+        <h3>SMC Mastery</h3>
+        <p>In-depth Smart Money Concepts training.</p>
+      </div>
+      <div class="course">
+        <h3>Scalping Masterclass</h3>
+        <p>Advanced scalping strategies & techniques.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>What Our Students Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>“CAS transformed my trading! The SMC course is top-notch.”</p>
+        <h4>- Mohsin.</h4>
+      </div>
+      <div class="testimonial">
+        <p>“Premium signals are accurate and profitable every month.”</p>
+        <h4>- Ahsan.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@cryptoacademysignals.com</p>
+    <p>Telegram: @CryptoAcademySignals</p>
+    <p>WhatsApp: +92 311 2661768 +92 3180253094</p>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="https://t.me/+K0j5qWZQCkNiNDhk" target="_blank" style="display: inline-block; margin: 0 10px; padding: 10px 20px; background-color: #229ED9; color: white; text-decoration: none; border-radius: 5px;">Join Telegram</a>
+      <a href="https://chat.whatsapp.com/KHY5lWIGjr7GgVUCSi1J1A" target="_blank" style="display: inline-block; margin: 0 10px; padding: 10px 20px; background-color: #25D366; color: white; text-decoration: none; border-radius: 5px;">Join WhatsApp</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Crypto Academy Signals. All rights reserved.
+  </footer>
+</body>
+</html>
